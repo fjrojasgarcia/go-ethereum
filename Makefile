@@ -147,3 +147,9 @@ geth-windows-amd64:
 	build/env.sh go run build/ci.go xgo -- --go=$(GO) --targets=windows/amd64 -v ./cmd/geth
 	@echo "Windows amd64 cross compilation done:"
 	@ls -ld $(GOBIN)/geth-windows-* | grep amd64
+
+# Swarm
+swarm-linux-arm-6:
+	build/env.sh go run build/ci.go xgo -- --go=$(GO) --targets=linux/arm-6 -v ./cmd/swarm
+	@echo "Swarm Linux ARMv6 cross compilation done:"
+	@ls -ld $(GOBIN)/swarm-linux-* | grep arm-6
